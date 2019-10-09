@@ -10,21 +10,9 @@
 <body>
     <!--Prototyp av index sidan för ett forum av Tim Rundström och Mario Barsum-->
     <!--Header-->
-    <header>
-        <!--Header logo + name-->
-        <a class="header">
-            <img src="nti-logo-black.png" alt="Black NTI logo" id="logo">
-            <h1>NTI Forum</h1>
-        </a>
-        <!--Header menu-->
-        <ul id="menu">
-            <li><a>Nytt inlägg</a></li>
-            <li><a>Mina inlägg</a></li>
-            <li><a>Följande</a></li>
-            <li id="floatRight"><a>Logga in</a></li>
-            <li id="floatRight"><a>Profil</a></li>
-        </ul>
-    </header>
+
+    <?php require '../templates/footer.php'?>
+
 
     <!--Main section-->
     <section>
@@ -74,12 +62,7 @@
     </section>
 
     <!--Footer menu-->
-    <footer>
-        <ul>
-            <li><a>NTI-Södertälje</a></li>
-            <li><a>Om oss</a></li>
-            <li><a>Kontakt</a></li>
-        </ul>
-    </footer>
+    <?php require '../templates/header.php'?>
+
 </body>
 </html>
