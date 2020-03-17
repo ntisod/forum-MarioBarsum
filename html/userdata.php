@@ -60,6 +60,6 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-        <script src="http://localhost:81/html/userdata.js">
+        <script src="http://localhost:81/html/userdata.js"><!--TL: Den här sökvägen kommer du aldrig kunna komma åt på webben. Ta bort allting utom filnamnet ifall filen ligger i samma mapp.-->
     </body>
 </html>
