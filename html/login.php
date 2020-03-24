@@ -14,9 +14,7 @@ session_start();
 
 <?php   
 
-function test_if_email_exists($email)
-{
-}
+
     //Hämta hemliga värden
     require("../includes/settings.php");
 
@@ -25,10 +23,7 @@ function test_if_email_exists($email)
 
         test_if_email_exists();
 
-        if (empty($_POST["email"])) {
-            //Tom i ifyllning
-            $emailErr = "Email is required";
-            $err = true;
+        
           } else { //Det finns ett värde
             $email = test_input($_POST["email"]);
             // check if e-mail address is well-formed
@@ -66,7 +61,42 @@ function test_if_email_exists($email)
         </form>
 HTML;
     }
-
+    function test_if_email_exists($email){
+      //Hämta hemliga värden                            
+      require("../includes/settings.php");
+  
+      //Testa om det går att ansluta till databasen
+      try {
+        //Skapa anslutningsobjekt
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        //Förbered SQL-kommando
+        $sql = "SELECT email FROM users WHERE email='$email'  LIMIT 1";
+        $stmt = $conn->prepare($sql);
+        //Skicka frågan till databasen
+        $stmt->execute();
+  
+        // Ta emot resultatet från databasen
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  
+        $row1 = $stmt->fetch();
+        if(empty($row1)){
+            echo "E-postadressen finns inte.";
+            return false;
+        }
+        else{
+              echo "E-postadressen finns.";
+              return true;
+        }
+      }
+      catch(PDOException $e) {
+        //Om något i anslutningen går fel
+        echo "Error: " . $e->getMessage();
+      }
+  
+      $conn = null;
+    }
 ?>
 
     
