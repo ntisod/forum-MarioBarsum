@@ -124,7 +124,7 @@
   }
 
   function test_if_email_exists($email){
-    //Hämta hemliga värden
+    //Hämta hemliga värden                            
     require("../includes/settings.php");
 
     //Testa om det går att ansluta till databasen
