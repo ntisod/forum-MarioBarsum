@@ -94,11 +94,14 @@ session_start();
         }
       }
   
-      
+      if($err){
+        require("../templates/loginform.php");  
+      }
 
     }else {
       require("../templates/loginform.php");  
     }
+
     function test_if_email_exists($email){
       //Hämta hemliga värden                            
       require("../includes/settings.php");
