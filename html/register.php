@@ -1,4 +1,7 @@
 <?php
+
+
+
     $nameErr = $lastnameErr = $emailErr = $pwErr = "";
     $name = $lastname = $email = $password = "";
     $err=false;

@@ -1,5 +1,7 @@
+<?php
 
-
+require("../includes/nti-functions.php");
+?>
 <header>
         <!--Header logo + name-->
         <a class="header">
