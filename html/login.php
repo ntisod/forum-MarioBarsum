@@ -61,10 +61,8 @@ require("../includes/nti-functions.php");
               try{
                 $hashed=get_db_value("users", "password", "email", "$email");
                     //Kontrollera om angivet lösenord stämmer med det i databasen
-                    $verified = password_verify($pw, $hashed);
-                  //Kontrollera om angivet lösenord stämmer med det i databasen
-                  $verified = password_verify($pw, $result['password']);
-
+                    $verified = password_verify($password, $hashed);
+              
                   if($verified){
                     $_SESSION['user']=$email;
                       echo "Grattis, du är inloggad!";
@@ -81,7 +79,7 @@ require("../includes/nti-functions.php");
               $conn = null;
         }
         
-        echo $name . "<br>" . $email . "<br>" . $password  . "<br>";
+        echo $email . "<br>" . $password  . "<br>";
 
         }
       }

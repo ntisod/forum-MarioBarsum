@@ -5,7 +5,7 @@ function get_db_value($table, $column, $key, $key_value):string{
     require("../includes/settings.php");
     try{
         //Anslut till databasen. 
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $dbpassword);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
@@ -45,7 +45,7 @@ function test_if_email_exists($email):bool{
     //Testa om det går att ansluta till databasen
     try {
         //Skapa anslutningsobjekt
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $dbpassword);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         //Förbered SQL-kommando
