@@ -1,6 +1,7 @@
 <?php
 
-function get_db_value($table, $column, $key, $key_value):string{
+function get_db_value($table, $column, $key, $key_value):string
+{
     //Hämta inställningar
     require("../includes/settings.php");
     try{

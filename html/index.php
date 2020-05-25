@@ -10,11 +10,11 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Huvudsida</title>
+    <title>NTI forum</title>
 </head>
 <body>
 <?php
-
+    require'../templates/header.php';
     //Kolla om du är inloggad
     if(isset($_SESSION['user'])){
         //Om inloggad
@@ -29,6 +29,7 @@ session_start();
         echo "<p><a href='login.php'>Logga in</a></p>";
     }
 
+    require'../templates/header.php';
 
 ?>
 </body>
