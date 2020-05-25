@@ -29,8 +29,6 @@ session_start();
         echo "<p><a href='login.php'>Logga in</a></p>";
     }
 
-    require'../templates/header.php';
-
 ?>
 </body>
 </html>

@@ -66,8 +66,10 @@ require("../includes/nti-functions.php");
                   if($verified){
                     $_SESSION['user']=$email;
                       echo "Grattis, du är inloggad!";
+                      session_regenerate_id();
+                      $_SESSION['user'] - $email;
                   } else{
-                      echo "Fel lösenord, eller användarnamn.";
+                      $pwErr - "Fel lösenord.";
                       $err=true;
                   }
               }
